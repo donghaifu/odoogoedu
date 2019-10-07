@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="course_list_action">
+            <field name="name">课程</field>
+            <field name="res_model">odoogoedu.course</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">创建一个课程
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">course.tree</field>
+            <field name="model">odoogoedu.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                    <field name="name"/>
+                    <field name="responsible_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="course_form_view">
+            <field name="name">course.form</field>
+            <field name="model">odoogoedu.course</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <notebook>
+                            <page string="描述">
+                                <field name="description"/>
+                                <field name="responsible_id"/>
+                                <field name="session_ids">
+                                    <tree string="Registered sessions">
+                                        <field name="name"/>
+                                        <field name="instructor_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="关于">
+                                测试页面
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="session_list_action">
+            <field name="name">课时</field>
+            <field name="res_model">odoogoedu.session</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="session_tree_view">
+            <field name="name">session.tree</field>
+            <field name="model">odoogoedu.session</field>
+            <field name="arch" type="xml">
+                <tree string="Session Tree">
+                    <field name="name"/>
+                    <field name="course_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_form_view">
+            <field name="name">session.form</field>
+            <field name="model">odoogoedu.session</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="课时信息">
+                                <field name="course_id"/>
+                                <field name="name"/>
+                                <field name="instructor_id"/>
+                            </group>
+                            <group string="时间">
+                                <field name="start_date"/>
+                                <field name="duration"/>
+                                <field name="seats"/>
+                            </group>
+                            <group string="学生">
+                                <field name="attendee_ids"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <menuitem id="main_odoogoedu_menu" name="课程管理"/>
+        <menuitem id="odoogoedu_menu" name="教室"
+                  parent="main_odoogoedu_menu"/>
+        <menuitem id="courses_menu" name="课程" parent="odoogoedu_menu"
+                  action="course_list_action"/>
+        <menuitem id="session_menu" name="课时" parent="odoogoedu_menu"
+                  action="session_list_action"/>
+
+        <!-- explicit list view definition -->
+        <!--
+        <record model="ir.ui.view" id="odoogoedu.list">
+          <field name="name">odoogoedu list</field>
+          <field name="model">odoogoedu.odoogoedu</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="value"/>
+              <field name="value2"/>
+            </tree>
+          </field>
+        </record>
+        -->
+
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="odoogoedu.action_window">
+          <field name="name">odoogoedu window</field>
+          <field name="res_model">odoogoedu.odoogoedu</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="odoogoedu.action_server">
+          <field name="name">odoogoedu server</field>
+          <field name="model_id" ref="model_odoogoedu_odoogoedu"/>
+          <field name="state">code</field>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+
+        <!-- Top menu item -->
+        <!--
+        <menuitem name="odoogoedu" id="odoogoedu.menu_root"/>
+        -->
+        <!-- menu categories -->
+        <!--
+        <menuitem name="Menu 1" id="odoogoedu.menu_1" parent="odoogoedu.menu_root"/>
+        <menuitem name="Menu 2" id="odoogoedu.menu_2" parent="odoogoedu.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="odoogoedu.menu_1_list" parent="odoogoedu.menu_1"
+                  action="odoogoedu.action_window"/>
+        <menuitem name="Server to list" id="odoogoedu" parent="odoogoedu.menu_2"
+                  action="odoogoedu.action_server"/>
+        -->
+    </data>
+</odoo>
