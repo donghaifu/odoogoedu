@@ -34,8 +34,10 @@
                         </group>
                         <notebook>
                             <page string="描述">
-                                <field name="description"/>
-                                <field name="responsible_id"/>
+                                <group>
+                                    <field name="description"/>
+                                    <field name="responsible_id"/>
+                                </group>
                                 <field name="session_ids">
                                     <tree string="Registered sessions">
                                         <field name="name"/>
@@ -89,9 +91,9 @@
                                 <field name="duration"/>
                                 <field name="seats"/>
                             </group>
-                            <group string="学生">
-                                <field name="attendee_ids"/>
-                            </group>
+                            <label for="attendee_ids"/>
+                            <field name="attendee_ids"/>
+
                         </group>
 
                     </sheet>
