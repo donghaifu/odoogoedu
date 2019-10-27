@@ -111,6 +111,9 @@
         <menuitem id="session_menu" name="课时" parent="odoogoedu_menu"
                   action="session_list_action"/>
 
+
+
+
         <!-- explicit list view definition -->
         <!--
         <record model="ir.ui.view" id="odoogoedu.list">

@@ -23,7 +23,10 @@ class Session(models.Model):
     seats = fields.Integer(string="座位数")
     #多个课时，指向一个指导老师
     #使用domain过滤出只是老师的partner记录
-    instructor_id = fields.Many2one('res.partner',string="老师",domain=[('instructor','=',True)])
+    #instructor_id = fields.Many2one('res.partner',string="老师",domain=[('instructor','=',True)])
+    #instructor_id = fields.Many2one('res.partner',string="老师")
+    instructor_id = fields.Many2one('res.partner', string="Instructor",
+                                    domain=['|', ('instructor', '=', True), ('category_id.name', 'ilike', "Teacher")])
     #多个课时，指向一个课程
     course_id = fields.Many2one('odoogoedu.course', ondelete='cascade', string="课程", required=True)
     #课时和学生是多对多的关系
