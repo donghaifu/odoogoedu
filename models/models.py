@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import random
 
 class Course(models.Model):
     _name = 'odoogoedu.course'
@@ -42,6 +43,14 @@ class Session(models.Model):
             else:
                 r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
 
+    #仅作测试用
+    test_name = fields.Char(compute='_compute_name')
+    @api.multi
+    def _compute_name(self):
+        print(self)
+        for record in self:
+            print(record)
+            record.test_name = str(random.randint(1, 1e6))
 
 class Extension0(models.Model):
     _name = 'extension.0'
