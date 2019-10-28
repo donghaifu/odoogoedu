@@ -32,6 +32,16 @@ class Session(models.Model):
     #课时和学生是多对多的关系
     attendee_ids = fields.Many2many('res.partner', string="学生")
 
+    taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
+
+    @api.depends('seats', 'attendee_ids')
+    def _taken_seats(self):
+        for r in self:
+            if not r.seats:
+                r.taken_seats = 0.0
+            else:
+                r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
+
 
 class Extension0(models.Model):
     _name = 'extension.0'
