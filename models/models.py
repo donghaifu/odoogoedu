@@ -43,14 +43,15 @@ class Session(models.Model):
             else:
                 r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
 
-    #仅作测试用
+    #odoo计算字段
     test_name = fields.Char(compute='_compute_name')
     @api.multi
     def _compute_name(self):
-        print(self)
+        print(self)                   #self是一个record集合(recordset),可以for循环出里面的单个记录（record），recordset还支持+号操作
         for record in self:
-            print(record)
+            print(record)             #代表单个记录
             record.test_name = str(random.randint(1, 1e6))
+            print(record.test_name)   #单个记录可以用 . 来访问字段
 
 class Extension0(models.Model):
     _name = 'extension.0'
