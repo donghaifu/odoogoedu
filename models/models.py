@@ -22,7 +22,19 @@ class Session(models.Model):
     #odoo默认值
     start_date = fields.Date(defalt=fields.Date.today)
     active = fields.Boolean(default=True)
-    user_id = fields.Many2one('res.users', default=lambda self: self.env.user)
+    def get_user(self):
+        print(self)
+        print(self.env)
+        print(self.env.cr)
+        print(self.env.uid)
+        print(self.env.user)
+        print(self.env.context)
+        print(self.env.ref)
+        print(self.env['res.users'])
+        return self.env.uid
+
+    #user_id = fields.Many2one('res.users', default=lambda self: self.env.user)
+    user_id = fields.Many2one('res.users', default=get_user)
 
     duration = fields.Float(digits=(6, 2), help="时长（天）")
     seats = fields.Integer(string="座位数")
