@@ -19,7 +19,11 @@ class Session(models.Model):
     _description = "课时"
 
     name = fields.Char(required=True)
-    start_date = fields.Date()
+    #odoo默认值
+    start_date = fields.Date(defalt=fields.Date.today)
+    active = fields.Boolean(default=True)
+    user_id = fields.Many2one('res.users', default=lambda self: self.env.user)
+
     duration = fields.Float(digits=(6, 2), help="时长（天）")
     seats = fields.Integer(string="座位数")
     #多个课时，指向一个指导老师
