@@ -23,6 +23,18 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="course_tree_view_inherit">
+            <field name="name">course.tree</field>
+            <field name="model">odoogoedu.course</field>
+            <field name="inherit_id" ref="course_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="description"/>
+                </xpath>
+            </field>
+        </record>
+
+
         <record model="ir.ui.view" id="course_form_view">
             <field name="name">course.form</field>
             <field name="model">odoogoedu.course</field>
@@ -67,10 +79,12 @@
             <field name="name">session.tree</field>
             <field name="model">odoogoedu.session</field>
             <field name="arch" type="xml">
-                <tree string="Session Tree">
+                <tree string="Session Tree"  editable = "top" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
                     <field name="name"/>
                     <field name="test_name"/>
                     <field name="course_id"/>
+                    <field name="user_id"/>
+                    <field name="duration"/>
                     <field name="taken_seats" widget="progressbar"/>
                 </tree>
             </field>

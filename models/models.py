@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 import random
 
 class Course(models.Model):
@@ -13,15 +13,50 @@ class Course(models.Model):
     #一个课程，对应多个课时，与课时模型中的course_id对应
     session_ids = fields.One2many('odoogoedu.session', 'course_id', string="课时")
 
+    _sql_constraints = [
+        ('name_description_check',
+         'CHECK(name != description)',
+         "课程名与课程描述不能相同"),
+
+        ('name_unique',
+         'UNIQUE(name)',
+         "课程名不能重复"),
+    ]
+
+
+    @api.multi
+    def copy(self, default=None):
+        default = dict(default or {})
+
+        copied_count = self.search_count(
+            [('name', '=like', u"%{}的副本".format(self.name))])
+        if not copied_count:
+            new_name = u"{}的副本".format(self.name)
+        else:
+            new_name = u"{} ({})的副本".format(self.name, copied_count)
+
+        default['name'] = new_name
+        return super(Course, self).copy(default)
+
+
 
 class Session(models.Model):
     _name = 'odoogoedu.session'
     _description = "课时"
 
     name = fields.Char(required=True)
-    #odoo默认值
-    start_date = fields.Date(defalt=fields.Date.today)
+
+    #默认值
+    @api.model
+    def _get_current_date(self):
+        """ :return current date """
+        return fields.Date.today()
+
+    #start_date = fields.Date(required=True, default=lambda self: self._get_current_date())
+    start_date = fields.Date(default=lambda self: self._get_current_date())
+
     active = fields.Boolean(default=True)
+
     def get_user(self):
         print(self)
         print(self.env)
@@ -32,13 +67,12 @@ class Session(models.Model):
         print(self.env.ref)
         print(self.env['res.users'])
         return self.env.uid
-
     #user_id = fields.Many2one('res.users', default=lambda self: self.env.user)
     user_id = fields.Many2one('res.users', default=get_user)
 
-    duration = fields.Float(digits=(6, 2), help="时长（天）")
-    seats = fields.Integer(string="座位数")
-    #多个课时，指向一个指导老师
+    duration = fields.Float(digits=(6, 2), help="时长（天）",default=1)
+
+    #Many2one:多个课时，指向一个指导老师
     #使用domain过滤出只是老师的partner记录
     #instructor_id = fields.Many2one('res.partner',string="老师",domain=[('instructor','=',True)])
     #instructor_id = fields.Many2one('res.partner',string="老师")
@@ -46,11 +80,13 @@ class Session(models.Model):
                                     domain=['|', ('instructor', '=', True), ('category_id.name', 'ilike', "Teacher")])
     #多个课时，指向一个课程
     course_id = fields.Many2one('odoogoedu.course', ondelete='cascade', string="课程", required=True)
-    #课时和学生是多对多的关系
+
+    #Many2Many:课时和学生是多对多的关系
     attendee_ids = fields.Many2many('res.partner', string="学生")
 
+    #依赖
+    seats = fields.Integer(string="座位数")
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
-
     @api.depends('seats', 'attendee_ids')
     def _taken_seats(self):
         for r in self:
@@ -58,10 +94,35 @@ class Session(models.Model):
                 r.taken_seats = 0.0
             else:
                 r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
+            #r.test_name = str(random.randint(1, 1e6))
+            #r.duration = str(random.randint(1, 1e6))
 
-    #odoo计算字段
+    #onchange方法
+    @api.onchange('seats', 'attendee_ids')
+    def _verify_valid_seats(self):
+        #self.test_name = str(random.randint(1, 1e6))
+        #self.duration = str(random.randint(1, 1e6))
+        #根据seats和attendee_ids改变，验证用户输入座位数不能为负数
+        if self.seats < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect 'seats' value",
+                    'message': "The number of available seats may not be negative",
+                },
+            }
+        #座位数不能小于现有出席人数
+        if self.seats < len(self.attendee_ids):
+            return {
+                'warning': {
+                    'title': "Too many attendees",
+                    'message': "Increase seats or remove excess attendees",
+                },
+            }
+
+    #计算字段
     test_name = fields.Char(compute='_compute_name')
     @api.multi
+    #@api.depends("seats")
     def _compute_name(self):
         print(self)                   #self是一个record集合(recordset),可以for循环出里面的单个记录（record），recordset还支持+号操作
         for record in self:
@@ -69,6 +130,14 @@ class Session(models.Model):
             record.test_name = str(random.randint(1, 1e6))
             print(record.test_name)   #单个记录可以用 . 来访问字段
 
+    #python代码级别模型约束
+    @api.constrains('instructor_id', 'attendee_ids')
+    def _check_instructor_not_in_attendees(self):
+        for r in self:
+            if r.instructor_id and r.instructor_id in r.attendee_ids:
+                raise exceptions.ValidationError("老师不出现在学生列表中")
+
+#继承
 class Extension0(models.Model):
     _name = 'extension.0'
     name = fields.Char(default="A")
