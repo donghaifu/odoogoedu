@@ -45,6 +45,7 @@ class Session(models.Model):
     _description = "课时"
 
     name = fields.Char(required=True)
+    description = fields.Text(string="课时描述")
 
     #默认值
     @api.model
