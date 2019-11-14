@@ -67,7 +67,6 @@
         </record>
 
 
-
         <record model="ir.actions.act_window" id="session_list_action">
             <field name="name">课时</field>
             <field name="res_model">odoogoedu.session</field>
@@ -79,7 +78,7 @@
             <field name="name">session.tree</field>
             <field name="model">odoogoedu.session</field>
             <field name="arch" type="xml">
-                <tree string="Session Tree"  decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
+                <tree string="Session Tree" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
                     <field name="name"/>
                     <field name="test_name"/>
                     <field name="description"/>
@@ -131,11 +130,14 @@
                     <field name="duration"/>
                     <field name="description" string="搜索名字或者课时描述"
                            filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
-                    <filter name="my_ideas" string="My Ideas" domain="[('instructor_id', '=', uid)]"/>
+                    <filter name="my_ideas" string="My Ideas" domain="[('user_id', '=', uid)]"/>
+                    <group string="Group By">
+                        <filter name="group_by_instructor" string="指导老师"
+                                context="{'group_by': 'instructor_id'}"/>
+                    </group>
                 </search>
             </field>
         </record>
-
 
 
         <menuitem id="main_odoogoedu_menu" name="课程管理"/>
@@ -145,8 +147,6 @@
                   action="course_list_action"/>
         <menuitem id="session_menu" name="课时" parent="odoogoedu_menu"
                   action="session_list_action"/>
-
-
 
 
         <!-- explicit list view definition -->
