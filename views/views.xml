@@ -71,6 +71,8 @@
             <field name="name">课时</field>
             <field name="res_model">odoogoedu.session</field>
             <field name="view_type">form</field>
+            <field name="search_view_id" ref="session_search_view"/>
+            <field name="context">{'search_default_group_by_instructor':1}</field>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -139,6 +141,16 @@
             </field>
         </record>
 
+        <record id="session_search_view_1" model="ir.ui.view">
+            <field name="name">session.search.1</field>
+            <field name="model">odoogoedu.session</field>
+            <field name="arch" type="xml">
+                <search string="Ideas">
+                    <field name="name"/>
+                    <field name="duration"/>
+                </search>
+            </field>
+        </record>
 
         <menuitem id="main_odoogoedu_menu" name="课程管理"/>
         <menuitem id="odoogoedu_menu" name="教室"
