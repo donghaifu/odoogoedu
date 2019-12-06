@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_odoogoedu_course,odoogoedu.course,model_odoogoedu_course,,1,1,1,1
-access_odoogoedu_session,odoogoedu.session,model_odoogoedu_session,,1,1,1,1
+access_odoogoedu_course,odoogoedu.course,model_odoogoedu_course,,1,0,0,0
+access_odoogoedu_session,odoogoedu.session,model_odoogoedu_session,,1,0,0,0
+course_manager,课程管理权限,model_odoogoedu_course,odoogoedu_manager,1,1,1,1
+session_manager,课程管理权限,model_odoogoedu_session,odoogoedu_manager,1,1,1,1

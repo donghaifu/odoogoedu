@@ -71,9 +71,9 @@
             <field name="name">课时</field>
             <field name="res_model">odoogoedu.session</field>
             <field name="view_type">form</field>
-            <field name="search_view_id" ref="session_search_view"/>
+            <field name="search_view_id" ref="session_search_view_1"/>
             <field name="context">{'search_default_group_by_instructor':1}</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,graph,kanban,calendar</field>
         </record>
 
         <record model="ir.ui.view" id="session_tree_view">
@@ -109,6 +109,7 @@
                             </group>
                             <group string="时间">
                                 <field name="start_date"/>
+                                <field name="end_date"/>
                                 <field name="duration"/>
                                 <field name="seats"/>
                                 <field name="taken_seats" widget="progressbar"/>
@@ -151,6 +152,105 @@
                 </search>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="odoogoedu_session_graph_view">
+            <field name="name">odoogoedu.session.graph</field>
+            <field name="model">odoogoedu.session</field>
+            <field name="arch" type="xml">
+                <graph string="Participations by Courses">
+                    <field name="name"/>
+                    <field name="attendees_count" />
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="odoogoedu_view_session_kanban">
+            <field name="name">odoogoedu.session.kanban</field>
+            <field name="model">odoogoedu.session</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="course_id">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <span class="oe_e">#</span>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    Session name:
+                                    <field name="name"/>
+                                    <br/>
+                                    Start date:
+                                    <field name="start_date"/>
+                                    <br/>
+                                    duration:
+                                    <field name="duration"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- calendar view -->
+        <record model="ir.ui.view" id="session_calendar_view">
+            <field name="name">session.calendar</field>
+            <field name="model">odoogoedu.session</field>
+            <field name="arch" type="xml">
+                <calendar date_start="start_date"
+                          date_stop="end_date"
+                          color="instructor_id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">odoogoedu.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add Attendees">
+                    <group>
+                        <!--field name="session_id"/-->
+                        <field name="session_ids"/>
+                        <field name="attendee_ids"/>
+                    </group>
+                    <footer>
+                        <button name="subscribe" type="object" string="订阅" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_session_wizard"
+                    name="添加学生"
+                    src_model="odoogoedu.session"
+                    res_model="odoogoedu.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
 
         <menuitem id="main_odoogoedu_menu" name="课程管理"/>
         <menuitem id="odoogoedu_menu" name="教室"
