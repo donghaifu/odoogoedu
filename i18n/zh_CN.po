@@ -1,0 +1,501 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoogoedu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-03 12:26+0000\n"
+"PO-Revision-Date: 2020-01-03 20:52+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.odoogoedu_view_session_kanban
+msgid ""
+"<br/>\n"
+"                                    Start date:"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.odoogoedu_view_session_kanban
+msgid ""
+"<br/>\n"
+"                                    duration:"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__active
+msgid "Active"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.wizard_form_view
+msgid "Add Attendees"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__attendee_ids
+msgid "Attendees"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__attendees_count
+msgid "Attendees count"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__child0_id
+msgid "Child0"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__child1_id
+msgid "Child1"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__color
+msgid "Color"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.actions.act_window,name:odoogoedu.contact_cat_list_action
+#: model:ir.ui.menu,name:odoogoedu.contact_cat_menu
+msgid "Contact Tags"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.course_tree_view
+msgid "Course Tree"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__create_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__create_date
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.odoogoedu_view_session_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__description
+msgid "Description"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__display_name
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__duration
+msgid "Duration"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__field_0
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__field_0
+msgid "Field 0"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__field_1
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__field_1
+msgid "Field 1"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__id
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__id
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__id
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__id
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__id
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__id
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__id
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__id
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_search_view
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_search_view_1
+msgid "Ideas"
+msgstr ""
+
+#. module: odoogoedu
+#: code:addons/odoogoedu/models/models.py:113
+#, python-format
+msgid "Incorrect 'seats' value"
+msgstr "错误的座位值"
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__instructor_id
+msgid "Instructor"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session____last_update
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__write_uid
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child0__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_child1__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_delegation_parent__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__write_date
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_search_view
+msgid "My Ideas"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_extension_0__name
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_0__name
+#: model:ir.model.fields,field_description:odoogoedu.field_inheritance_1__name
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__name
+msgid "Name"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.odoogoedu_session_graph_view
+msgid "Participations by Courses"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.course_form_view
+msgid "Registered sessions"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_tree_view
+msgid "Session Tree"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.odoogoedu_view_session_kanban
+msgid "Session name:"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_wizard__session_ids
+msgid "Sessions"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__taken_seats
+msgid "Taken seats"
+msgstr ""
+
+#. module: odoogoedu
+#: model:res.partner.category,name:odoogoedu.teacher1
+msgid "Teacher / Level 1"
+msgstr ""
+
+#. module: odoogoedu
+#: model:res.partner.category,name:odoogoedu.teacher2
+msgid "Teacher / Level 2"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__test_name
+msgid "Test Name"
+msgstr ""
+
+#. module: odoogoedu
+#: code:addons/odoogoedu/models/models.py:114
+#, python-format
+msgid "The number of available seats may not be negative"
+msgstr "座位值不能为负数"
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__user_id
+msgid "User"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_delegation_child0
+msgid "delegation.child0"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_delegation_child1
+msgid "delegation.child1"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_delegation_parent
+msgid "delegation.parent"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_extension_0
+msgid "extension.0"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_inheritance_0
+msgid "inheritance.0"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_inheritance_1
+msgid "inheritance.1"
+msgstr ""
+
+#. module: odoogoedu
+#: model:res.groups,name:odoogoedu.odoogoedu_manager
+msgid "odoogoedu / 管理员"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_odoogoedu_wizard
+msgid "odoogoedu.wizard"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.wizard_form_view
+msgid "or"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.course_form_view
+msgid "关于"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_res_partner__session_ids
+#: model:ir.model.fields,field_description:odoogoedu.field_res_users__session_ids
+msgid "出席课时"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.actions.act_window,help:odoogoedu.course_list_action
+msgid "创建一个课程"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__attendee_ids
+msgid "学生"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__seats
+msgid "座位数"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_search_view
+msgid "指导老师"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.course_form_view
+msgid "描述"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_search_view
+msgid "搜索名字或者课时描述"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.ui.menu,name:odoogoedu.odoogoedu_menu
+msgid "教室"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,help:odoogoedu.field_odoogoedu_session__duration
+msgid "时长（天）"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_form_view
+msgid "时间"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.course_form_view
+msgid "测试页面"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.actions.act_window,name:odoogoedu.launch_session_wizard
+msgid "添加学生"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_res_partner__instructor
+#: model:ir.model.fields,field_description:odoogoedu.field_res_users__instructor
+msgid "老师"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.actions.act_window,name:odoogoedu.contact_list_action
+#: model:ir.ui.menu,name:odoogoedu.contact_menu
+msgid "联系人"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.wizard_form_view
+msgid "订阅"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.actions.act_window,name:odoogoedu.session_list_action
+#: model:ir.model,name:odoogoedu.model_odoogoedu_session
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__session_ids
+#: model:ir.ui.menu,name:odoogoedu.session_menu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.partner_instructor_form_view
+msgid "课时"
+msgstr ""
+
+#. module: odoogoedu
+#: model_terms:ir.ui.view,arch_db:odoogoedu.session_form_view
+msgid "课时信息"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__description
+msgid "课时描述"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.actions.act_window,name:odoogoedu.course_list_action
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_session__course_id
+#: model:ir.ui.menu,name:odoogoedu.courses_menu
+msgid "课程"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__name
+msgid "课程名"
+msgstr ""
+
+#. module: odoogoedu
+#: sql_constraint:odoogoedu.course:0
+msgid "课程名不能重复"
+msgstr ""
+
+#. module: odoogoedu
+#: sql_constraint:odoogoedu.course:0
+msgid "课程名与课程描述不能相同"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__description
+msgid "课程描述"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.ui.menu,name:odoogoedu.main_odoogoedu_menu
+msgid "课程管理"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model,name:odoogoedu.model_odoogoedu_course
+msgid "课程记录"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.model.fields,field_description:odoogoedu.field_odoogoedu_course__responsible_id
+msgid "负责人"
+msgstr ""
+
+#. module: odoogoedu
+#: model:ir.ui.menu,name:odoogoedu.configuration_menu
+msgid "配置"
+msgstr ""
